@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Practical No. 8 - Visitor Counter</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 30px;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color:black; /* Title blue */
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    hr {
+      border: none;
+      height: 2px;
+      background-color: #2980b9;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      font-weight: bold;
+      margin-top: 25px;
+      margin-bottom: 5px;
+      color: #2980b9;
+    }
+
+    p, ul {
+      line-height: 1.6;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    .code-block {
+      background-color: #111;
+      color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      font-family: Consolas, monospace;
+      margin-top: 20px;
+      white-space: pre-wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #2980b9;
+      color: #fff;
+      padding: 10px 20px;
+      margin: 10px 5px 0 0;
+      text-decoration: none;
+      border-radius: 5px;
+      width: 200px;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background-color:  #2980b9;
+    }
+
+    h3 {
+      color: #2980b9;
+      margin-top: 30px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Practical No. 8 - Write a PHP Program to Track Visitors</h2>
+    <hr />
+
+    <div class="section-title">Title:</div>
+    <p>Write a PHP program to keep track of the number of visitors visiting the web page and to display this count of visitors, with proper headings.</p>
+
+    <div class="section-title">Theory:</div>
+    <p>
+      Web applications often need to track visitor statistics for analytics purposes. One way to accomplish this is by keeping a count of visitors to a webpage.
+      PHP, as a server-side scripting language, provides the ability to store and manipulate such data.
+    </p>
+    <p>The visitor count can be implemented using:</p>
+    <ul>
+      <li>File-based approach: Storing the count in a text file.</li>
+      <li>Session-based approach: Tracking users during their current session.</li>
+      <li>Database approach: Using databases to maintain visitor counts persistently.</li>
+    </ul>
+    <p>
+      For this program, we'll use the <strong>file-based approach</strong> to store the visitor count in a `.txt` file and increment the count every time the webpage is accessed.
+    </p>
+
+    <div class="section-title">Code:</div>
+    <div class="code-block">
+&lt;?php
+$file = "visitor_count.txt";
+
+if (!file_exists($file)) {
+    file_put_contents($file, 0);
+}
+
+$count = (int)file_get_contents($file);
+$count++;
+file_put_contents($file, $count);
+
+echo "&lt;h2&gt;Total Visitors: $count&lt;/h2&gt;";
+?&gt;
+    </div>
+
+    <div class="section-title">Output:</div>
+
+    <a href="visitor.jpg" class="btn">🔍View Output</a><br>
+    <a href="index.html" class="btn">🏠 Go Back to Home</a>
+  </div>
+</body>
+</html>

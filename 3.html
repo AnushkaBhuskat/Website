@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Timetable</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        h2 {
+            color: #2c3e50;
+            text-transform: uppercase;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #2980b9;
+            margin-top: 20px;
+        }
+
+        /* Code Block Styling */
+        pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Button Styling */
+        .btn {
+            display: block;  /* Ensures buttons appear one below the other */
+            width: 200px;
+            text-align: center;
+            background: #3498db;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px; /* Creates vertical spacing between buttons */
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Practical No. 3: Create Your Class Timetable Using Table Tag</h2>
+        <h3>Title: Create Your Class Timetable Using Table Tag </h3>
+
+        <h3>Objective:</h3>
+        <p>To learn how to create an HTML table to display a class timetable.</p>
+
+        <h3>Software Required:</h3>
+        <ul>
+            <li>Text Editor (e.g., Notepad++, VS Code, Sublime Text)</li>
+            <li>Web Browser (e.g., Chrome, Firefox)</li>
+        </ul>
+
+        <h3>Theory:</h3>
+        <p>HTML tables are used to present information in a structured format with rows and columns. The <code>&lt;table&gt;</code> tag is the main container, while <code>&lt;tr&gt;</code> (rows), <code>&lt;th&gt;</code> (headers), and <code>&lt;td&gt;</code> (data cells) define the table structure.</p>
+
+        <h3>Code:</h3>
+        <pre><code>
+        &lt;table&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Day&lt;/th&gt;
+                &lt;th&gt;11:00 AM - 12:00 PM&lt;/th&gt;
+                &lt;th&gt;12:00 PM - 1:00 PM&lt;/th&gt;
+                &lt;th&gt;1.00 PM - 1.15 PM&lt;/th&gt;
+                &lt;th&gt;1:15 PM - 2:15 PM&lt;/th&gt;
+                &lt;th&gt;2:15 PM - 3:15 PM&lt;/th&gt;
+                &lt;th&gt;3.15 PM - 3.45 PM&lt;/th&gt;
+                &lt;th&gt;3:45 PM - 4:45 PM&lt;/th&gt;
+                &lt;th&gt;4:45 PM - 5:45 PM&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Monday&lt;/td&gt;
+                &lt;td&gt;TOC (CMM) B1&lt;/td&gt;
+                &lt;td&gt;DCN (KPS) B1&lt;/td&gt;
+                &lt;td rowspan="5"&gt;BREAK&lt;/td&gt;
+                &lt;td colspan="2"&gt;OS(A)/DCN(B)/M&ALP(C)/CSKILL(D)&lt;/td&gt;
+                &lt;td rowspan="5"&gt;RECESS&lt;/td&gt;
+                &lt;td colspan="2"&gt;Skill Development Program&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+        </code></pre>
+
+        <h3>Output:</h3>
+        <a href="timetable.jpg" class="btn">🔍View Output</a>
+        <a href="index.html" class="btn">🏠 Go Back to Home</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practical No. 7: Calculator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f8;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            padding: 30px 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            text-align: center;
+            color: #000;
+            border-bottom: 2px solid #2980b9;
+            padding-bottom: 10px;
+        }
+
+
+        ul {
+            line-height: 1.7;
+        }
+
+        .code-block {
+            background-color: #1e1e1e;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 15px;
+            white-space: pre;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        
+        .btn {
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 10px 15px;
+            background:#2980b9 ;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            width:200px;
+            text-align: center;
+            justify-content: left;
+        }
+        .btn:hover {
+            background:  #2980b9;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #777;
+        }
+        h3{
+           color: #2980b9
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>PRACTICAL NO. 7: SIMPLE CALCULATOR</h1>
+
+    <h3>Title: Create a Simple Calculator using JavaScript</h3>
+
+    <h3>Software/Hardware Required</h3>
+    <ul>
+        <li><strong>Software:</strong> Text Editor (VS Code, Sublime, Notepad++), Web Browser</li>
+        <li><strong>Hardware:</strong> A computer or laptop with a modern browser</li>
+    </ul>
+
+    <h2>Theory:</h2>
+    <p>
+        A calculator is a basic web application used to perform arithmetic operations such as addition, subtraction, multiplication, and division.
+        In this practical, we build a simple calculator using HTML, CSS, and JavaScript. The application demonstrates how to:
+    </p>
+    <ul>
+        <li>Capture user input using form elements</li>
+        <li>Perform arithmetic operations using JavaScript functions</li>
+        <li>Dynamically display the result on the webpage</li>
+        <li>Use event handling for user interaction</li>
+    </ul>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+&lt;script&gt;
+function calculate(operation) {
+    const num1 = parseFloat(document.getElementById('num1').value);
+    const num2 = parseFloat(document.getElementById('num2').value);
+    let result;
+
+    if (isNaN(num1) || isNaN(num2)) {
+        result = "Please enter valid numbers.";
+    } else {
+        if (operation === 'add') {
+            result = num1 + num2;
+        } else if (operation === 'subtract') {
+            result = num1 - num2;
+        } else if (operation === 'multiply') {
+            result = num1 * num2;
+        } else if (operation === 'divide') {
+            result = num2 !== 0 ? (num1 / num2) : "Cannot divide by zero";
+        }
+    }
+
+    document.getElementById('result').innerText = "Result: " + result;
+}
+&lt;/script&gt;
+    </div>
+
+    <!-- Buttons below code block -->
+   <h3>Output:</h3>
+        <a href="calculator.jpg" class="btn">🔍View Output</a><br>
+        <a href="index.html" class="btn">Go Back to Home</a>
+    
+
+    <footer>&copy; 2025 | Practical by Anushka Bhuskat</footer>
+</div>
+
+<script>
+    function calculate(operation) {
+        const num1 = parseFloat(document.getElementById('num1').value);
+        const num2 = parseFloat(document.getElementById('num2').value);
+        let result;
+
+        if (isNaN(num1) || isNaN(num2)) {
+            result = "Please enter valid numbers.";
+        } else {
+            if (operation === 'add') {
+                result = num1 + num2;
+            } else if (operation === 'subtract') {
+                result = num1 - num2;
+            } else if (operation === 'multiply') {
+                result = num1 * num2;
+            } else if (operation === 'divide') {
+                result = num2 !== 0 ? (num1 / num2) : "Cannot divide by zero";
+            }
+        }
+
+        document.getElementById('result').innerText = "Result: " + result;
+    }
+</script>
+
+</body>
+</html>

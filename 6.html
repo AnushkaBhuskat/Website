@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical No. 5 & 6 - Web Development</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin:0;
+            padding: 20px;
+            
+        }
+        h2 {
+            text-align: center;
+            color: #2980b9;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .code-section {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        .btn {
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 10px 15px;
+            background:#2980b9 ;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            width:200px;
+            text-align: center;
+        }
+        .btn:hover {
+            background:  #2980b9;
+        }
+        h3{
+           color: #2980b9
+        }
+        #date {
+            font-size: 20px;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            background: white;
+            display: inline-block;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+   
+    
+    <div class="container">
+        <h2>Practical No. 6 - Develop a JavaScript to Display Today’s Date</h2>
+        <h3>Title:</h3>
+        <p>Develop a JavaScript to Display Today’s Date.</p>
+       <h3> Software/Hardware Required:</h3>
+       <ul> 
+<li> Software: Web Browser (Chrome, Firefox, Edge), Code Editor (VS Code, Notepad++, 
+Sublime Text) </li>
+<li> Hardware: Computer with a web development environment </li>
+</ul>
+<h3>Theory:</h3> 
+<p>JavaScript provides the Date object, which allows developers to fetch and manipulate date and 
+    time. </p>
+<p>Key JavaScript Methods for Date Handling:</p>
+<ul>
+<li>new Date() → Creates a new date object representing the current date and time. </li>
+<li>.getDate() → Gets the day of the month (1-31). </li>
+<li>.getMonth() → Gets the month (0-11, where January is 0). </li>
+<li>.getFullYear() → Gets the four-digit year.</li></ul> 
+<p>Using these methods, we can display today’s date dynamically.</p>
+        <h3>Code:</h3>
+        <div class="code-section">
+            &lt;!DOCTYPE html&gt;<br>
+            &lt;html&gt;<br>
+            &lt;head&gt;<br>
+            &nbsp;&nbsp;&nbsp;&lt;title&gt;Today's Date&lt;/title&gt;<br>
+            &nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function showDate() {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var today = new Date();<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var formattedDate = today.toLocaleDateString();<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("date").innerHTML = "Today's Date: " + formattedDate;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;window.onload = showDate;<br>
+            &nbsp;&nbsp;&nbsp;&lt;/script&gt;<br>
+            &lt;/head&gt;<br>
+            &lt;body&gt;<br>
+            &nbsp;&nbsp;&nbsp;&lt;h2&gt;Today's Date&lt;/h2&gt;<br>
+            &nbsp;&nbsp;&nbsp;&lt;div id="date"&gt;&lt;/div&gt;<br>
+            &lt;/body&gt;<br>
+            &lt;/html&gt;
+        </div>
+        <div>
+        <a href="date.jpg" class="btn">🔍View Output</a></div>
+        <a href="index.html" class="btn">🏠 Go Back to Home</a>
+    </div>
+</body>
+</html>

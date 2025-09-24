@@ -1,0 +1,209 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Practical No. 9 - Digital Clock</title>
+  <style>
+    :root {
+      --primary-color: #2980b9;
+      --background-color: #f4f4f4;
+      --text-color: #333;
+      --code-bg: #1e1e1e;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    hr {
+      border: none;
+      height: 2px;
+      background-color: var(--primary-color);
+      margin-bottom: 30px;
+    }
+
+    .section {
+      margin-bottom: 25px;
+    }
+
+    .section-title {
+      font-size: 1.2em;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 8px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    code {
+      background: #eee;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .code-block {
+      background-color: var(--code-bg);
+      color: #e0e0e0;
+      padding: 20px;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-family: Consolas, monospace;
+      font-size: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 12px 20px;
+      margin: 10px 10px 0 0;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+      width:20%;
+    }
+
+    .btn:hover {
+      background-color: #1c5980;
+    }
+
+    h3 {
+      color: var(--primary-color);
+      margin-top: 40px;
+      font-size: 1.4em;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Practical No. 9 - Digital Clock in PHP</h2>
+    <hr />
+
+    <div class="section">
+      <div class="section-title">Title:</div>
+      <p>Write a PHP Program to Display a Digital Clock Which Displays the Current Time of the Server.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Software/Hardware Required:</div>
+      <ul>
+        <li><strong>Software:</strong> XAMPP/WAMP Server, Web Browser (Chrome, Firefox, Edge), Code Editor (VS Code, Notepad++)</li>
+        <li><strong>Hardware:</strong> Computer with PHP and Apache Server Installed</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Theory:</div>
+      <p>
+        PHP is a server-side scripting language used for creating dynamic web applications. It runs on the server and can interact with the system clock using the <code>date()</code> function. This enables displaying the current time based on server settings.
+      </p>
+      <p>
+        To keep the clock live without reloading the page, we use JavaScript to fetch the time via AJAX from a PHP file.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Key PHP & JS Functions Used:</div>
+      <ul>
+        <li><code>date("H:i:s")</code> → Displays the current time in HH:MM:SS format.</li>
+        <li><code>date_default_timezone_set("Asia/Kolkata")</code> → Sets the timezone.</li>
+        <li><code>setInterval()</code> → Refreshes the clock every second using JavaScript.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Code:</div>
+      <div class="code-block">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Digital Clock&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #f4f4f4;
+        }
+        #clock {
+            font-size: 50px;
+            color: white;
+            font-weight: bold;
+            padding: 20px;
+            background: black;
+            display: inline-block;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h2&gt;Server Time Digital Clock&lt;/h2&gt;
+    &lt;div id="clock"&gt;
+        &lt;?php
+            date_default_timezone_set("Asia/Kolkata");
+            echo date("H:i:s");
+        ?&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        function updateClock() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "server_time.php", true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 &amp;&amp; xhr.status == 200) {
+                    document.getElementById("clock").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+        }
+        setInterval(updateClock, 1000);
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+--- server_time.php ---
+
+&lt;?php
+    date_default_timezone_set("Asia/Kolkata");
+    echo date("H:i:s");
+?&gt;
+      </div>
+    </div>
+
+    <h3>Output</h3>
+    <a href="time.jpg" class="btn"> 🔍View Output</a><br>
+    <a href="index.html" class="btn">🏠 Go Back to Home</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Practical No. 10</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #0077cc;
+      font-size: 1.4rem;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+    }
+
+    h3 {
+      color: #333;
+      margin-top: 30px;
+    }
+
+    ul, ol {
+      padding-left: 20px;
+    }
+
+    .code-block {
+      background-color: #1e1e1e;
+      color: #dcdcdc;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 15px 0;
+      overflow-x: auto;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px 16px;
+      background-color:#2980b9;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 500;
+    }
+
+    .btn:hover {
+            background : #2980b9;
+    }
+            
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Practical No. 10 - Write a Program Using Arduino IDE for Blinking LED</h2>
+
+    <p><strong>Software/Hardware Required:</strong></p>
+    <ul>
+      <li>Arduino IDE</li>
+      <li>USB Driver, Arduino Board, LED, 220Ω Resistor, Jumper Wires, Breadboard</li>
+    </ul>
+
+    <h3>Theory:</h3>
+    <p>Basic LED blink program to test the Arduino board functionality using <code>digitalWrite()</code> and <code>delay()</code>.</p>
+
+    <h3>Circuit Diagram - Connections:</h3>
+    <ul>
+      <li>Pin 13 → LED (Anode +)</li>
+      <li>GND → LED (Cathode -) via 220Ω resistor</li>
+    </ul>
+
+    <h3>Code:</h3>
+    <div class="code-block">
+// Blink LED on Pin 13<br>
+void setup() {<br>
+  pinMode(13, OUTPUT);<br>
+}<br>
+void loop() {<br>
+  digitalWrite(13, HIGH);<br>
+  delay(1000);<br>
+  digitalWrite(13, LOW);<br>
+  delay(1000);<br>
+}
+    </div>
+
+    <h3>Output:</h3>
+    <a href="pic1.jpg" class="btn">🔍 View Output</a><br>
+    <a href="index.html" class="btn">🏠Go Back to Home</a>
+  </div>
+</body>
+</html>
